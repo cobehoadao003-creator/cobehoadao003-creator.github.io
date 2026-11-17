@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Họ tên] – Trưởng phòng Marketing &amp; Sale</title>
+<meta name="description" content="Hơn 3 năm kinh nghiệm marketing &amp; sale đa ngành, xây phòng marketing &amp; sale từ con số 0.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,700;0,800;0,900;1,800&display=swap&subset=vietnamese" rel="stylesheet">
+<style>
+:root{
+  --ink:#0e1a2b; --ink-2:#16263d; --cream:#f5f0e6; --paper:#fffaf1;
+  --accent:#ff5a2c; --accent-dk:#c4370f; --lime:#d7f25c;
+  --muted-dark:#b9c3d3; --muted:#4a5568; --line:rgba(14,26,43,.14);
+  --gut:16px; --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;overflow-x:clip}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+.ph{background:rgba(255,90,44,.14);outline:1.5px dashed currentColor;outline-offset:2px;border-radius:4px;padding:0 .2em}
+.kicker{display:inline-flex;align-items:center;gap:.6em;font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.kicker::before{content:"";width:28px;height:3px;background:var(--accent)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--lime);color:var(--ink);padding:10px 14px;z-index:10}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:5;background:rgba(14,26,43,.92);backdrop-filter:blur(8px);color:#fff}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:12px}
+.brand{font-weight:900;letter-spacing:-.02em;text-decoration:none;font-size:1.05rem}
+.brand span{color:var(--accent)}
+.nav ul{display:none;list-style:none;gap:4px}
+.nav ul a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;text-decoration:none;font-weight:500;font-size:.92rem;color:var(--muted-dark)}
+.nav ul a:hover{color:#fff}
+.nav-cta{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--accent);color:var(--ink);font-weight:800;text-decoration:none;border-radius:999px;font-size:.9rem}
+@media(min-width:900px){.nav ul{display:flex}}
+
+/* HERO */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:48px 0 64px}
+.hero::after{content:"0";position:absolute;right:-.12em;bottom:-.32em;font-weight:900;font-size:clamp(18rem,70vw,46rem);line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,90,44,.28);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;gap:36px}
+.hero h1{font-weight:900;font-size:clamp(2.6rem,11vw,6.2rem);line-height:.98;letter-spacing:-.035em;margin:18px 0 14px}
+.hero h1 .ph{background:transparent;outline-color:var(--accent);outline-width:3px}
+.role{display:inline-block;font-weight:800;font-size:clamp(1.05rem,4.4vw,1.6rem);background:var(--accent);color:var(--ink);padding:6px 14px;transform:rotate(-1.5deg);margin-bottom:22px}
+.intro{color:var(--muted-dark);font-size:clamp(1rem,3.8vw,1.18rem);max-width:36em}
+.intro strong{color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:52px;padding:0 22px;font-weight:800;text-decoration:none;border-radius:999px;font-size:1rem;transition:transform .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--lime);color:var(--ink)}
+.btn-ghost{border:2px solid rgba(255,255,255,.7);color:#fff}
+.btn-ghost:hover{background:#fff;color:var(--ink)}
+.avatar{width:min(100%,320px);aspect-ratio:4/5;justify-self:start;border:2px dashed rgba(255,255,255,.55);background:repeating-linear-gradient(135deg,var(--ink-2) 0 14px,#1b2e49 14px 28px);display:grid;place-items:center;color:#fff;font-weight:700;letter-spacing:.06em;position:relative;box-shadow:12px 12px 0 var(--accent)}
+.avatar small{display:block;font-weight:500;color:var(--muted-dark);font-size:.8rem;letter-spacing:0;margin-top:4px;text-align:center}
+@media(min-width:900px){
+  .hero{padding:96px 0 120px}
+  .hero-grid{grid-template-columns:1.5fr 1fr;align-items:end}
+  .avatar{justify-self:end;transform:rotate(2deg)}
+}
+
+/* STATS */
+.stats{background:var(--paper);padding:72px 0;border-bottom:1px solid var(--line)}
+.sec-title{font-weight:900;font-size:clamp(2rem,8vw,3.6rem);line-height:1.02;letter-spacing:-.03em;margin:14px 0 36px;max-width:14em}
+.stat-grid{display:grid;gap:0;border-top:3px solid var(--ink)}
+.stat{padding:26px 0;border-bottom:1px solid var(--line);display:grid;gap:6px}
+.num{font-weight:900;letter-spacing:-.045em;line-height:.95;font-size:clamp(2.2rem,11vw,5.2rem);color:var(--ink);overflow-wrap:anywhere}
+.num .u{color:var(--accent-dk)}
+.stat p{color:var(--muted);max-width:28em}
+.stat p b{color:var(--ink)}
+.stat.big .num{font-size:clamp(2.2rem,11vw,8.5rem)}
+.stat.big{background:var(--ink);color:#fff;padding:28px 18px;margin:0 calc(var(--gut)*-1);border-bottom:0}
+.stat.big .num{color:#fff}
+.stat.big .num .u{color:var(--accent)}
+.stat.big p{color:var(--muted-dark)}
+.stat.big p b{color:#fff}
+.tag{font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dk)}
+.stat.big .tag{color:var(--lime)}
+@media(min-width:760px){
+  .stat-grid{grid-template-columns:repeat(6,1fr)}
+  .stat{padding:30px 24px 30px 0}
+  .stat.big{grid-column:1/-1;margin:0;padding:40px 36px}
+  .stat.s2{grid-column:span 3;border-right:1px solid var(--line)}
+  .stat.s3{grid-column:span 3;padding-left:24px}
+  .stat.s4{grid-column:span 4;border-right:1px solid var(--line)}
+  .stat.s5{grid-column:span 2;padding-left:24px}
+}
+
+/* ABOUT */
+.about{padding:80px 0;background:var(--cream)}
+.about-grid{display:grid;gap:32px}
+.lead{font-size:clamp(1.25rem,5vw,1.9rem);font-weight:700;line-height:1.35;letter-spacing:-.015em}
+.lead em{font-style:normal;background:linear-gradient(transparent 62%,var(--lime) 62%)}
+.facts{list-style:none;display:grid;gap:14px}
+.facts li{background:var(--paper);border-left:5px solid var(--accent);padding:16px 18px}
+.facts h3{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1.5px solid var(--ink);border-radius:999px;padding:4px 12px;font-weight:600;font-size:.92rem}
+@media(min-width:900px){.about-grid{grid-template-columns:1.2fr 1fr;align-items:start;gap:64px}}
+
+/* PROJECTS */
+.projects{background:var(--ink);color:#fff;padding:80px 0}
+.projects .sec-title{color:#fff}
+.proj-list{display:grid;gap:22px}
+.card{background:var(--ink-2);border:1px solid rgba(255,255,255,.1);padding:26px 20px;position:relative;overflow:hidden}
+.card .idx{position:absolute;top:-.18em;right:.05em;font-weight:900;font-size:clamp(6rem,30vw,10rem);line-height:1;color:rgba(255,255,255,.06);pointer-events:none}
+.card .role-tag{display:inline-block;background:var(--lime);color:var(--ink);font-weight:800;font-size:.8rem;padding:4px 10px;margin-bottom:14px}
+.card h3{font-weight:900;font-size:clamp(1.6rem,6.5vw,2.4rem);line-height:1.08;letter-spacing:-.025em;margin-bottom:16px;position:relative}
+.card ul{list-style:none;display:grid;gap:10px;color:var(--muted-dark);position:relative}
+.card li{padding-left:22px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:3px;background:var(--accent)}
+.card li b{color:#fff}
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0 6px;align-items:end;position:relative}
+.ladder div{background:rgba(255,255,255,.07);padding:10px 8px;border-top:3px solid var(--accent)}
+.ladder div:nth-child(3){background:var(--accent);color:var(--ink)}
+.ladder small{display:block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.ladder strong{display:block;font-weight:900;font-size:clamp(.92rem,3.9vw,1.25rem);letter-spacing:-.02em;overflow-wrap:anywhere}
+.ladder div:nth-child(1){min-height:70px}.ladder div:nth-child(2){min-height:90px}.ladder div:nth-child(3){min-height:130px}
+@media (max-width:520px){.ladder{grid-template-columns:1fr;gap:6px}.ladder div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;min-height:0!important}.ladder strong{white-space:nowrap;overflow-wrap:normal;font-size:1.05rem}.ladder div:nth-child(1){width:72%}.ladder div:nth-child(2){width:84%}.ladder div:nth-child(3){width:100%}}
+.note{font-size:.8rem;color:var(--muted-dark);position:relative}
+.highlight{margin-top:18px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;position:relative}
+.highlight .hnum{font-weight:900;font-size:clamp(2rem,9vw,3.4rem);letter-spacing:-.04em;color:var(--accent);line-height:1}
+.highlight span{color:var(--muted-dark)}
+@media(min-width:900px){
+  .proj-list{grid-template-columns:repeat(12,1fr);gap:24px}
+  .card{padding:36px 32px}
+  .card.c1{grid-column:1/8;grid-row:span 2}
+  .card.c2{grid-column:8/13}
+  .card.c3{grid-column:8/13}
+}
+
+/* SKILLS */
+.skills{padding:80px 0;background:var(--paper)}
+.skill-grid{display:grid;gap:18px}
+.sk{padding:24px 20px;border:2px solid var(--ink);background:var(--cream)}
+.sk.hot{background:var(--accent);border-color:var(--accent);color:var(--ink)}
+.sk h3{font-weight:900;font-size:1.4rem;letter-spacing:-.02em;margin-bottom:14px;display:flex;align-items:baseline;gap:10px}
+.sk h3 span{font-size:.8rem;font-weight:800;opacity:.7}
+.sk ul{list-style:none;display:grid;gap:10px}
+.sk li{border-top:1px solid rgba(14,26,43,.2);padding-top:10px;font-weight:500}
+.sk li:first-child{border-top:0;padding-top:0}
+@media(min-width:900px){.skill-grid{grid-template-columns:1.2fr 1fr 1fr}.sk.hot{transform:translateY(-14px)}}
+
+/* COLLAB */
+.collab{padding:80px 0;background:var(--cream)}
+.collab-grid{display:grid;gap:18px}
+.offer{padding:28px 22px;background:var(--paper);border:1px solid var(--line);display:flex;flex-direction:column;gap:14px}
+.offer.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.offer .for{font-weight:800;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-dk)}
+.offer.dark .for{color:var(--lime)}
+.offer h3{font-weight:900;font-size:clamp(1.5rem,6vw,2.1rem);line-height:1.1;letter-spacing:-.025em}
+.offer p{color:var(--muted)}
+.offer.dark p{color:var(--muted-dark)}
+.offer .btn{align-self:flex-start;margin-top:auto}
+.offer .btn-dark{background:var(--ink);color:#fff}
+@media(min-width:760px){.collab-grid{grid-template-columns:1fr 1fr}.offer{padding:40px 36px}}
+
+/* CONTACT */
+.contact{background:var(--accent);color:var(--ink);padding:80px 0;position:relative;overflow:hidden}
+.contact .sec-title{max-width:none;font-size:clamp(2.6rem,13vw,7rem);margin-bottom:28px}
+.contact .kicker::before{background:var(--ink)}
+.c-list{list-style:none;display:grid;gap:12px;max-width:760px}
+.c-list li{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;min-height:64px;padding:12px 18px;background:var(--ink);color:#fff}
+.c-list small{font-size:.76rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--lime)}
+.c-list span{font-weight:800;font-size:clamp(1.05rem,4.5vw,1.4rem)}
+.c-list .ph{background:rgba(255,255,255,.08)}
+.contact p.small{margin-top:20px;font-weight:500;max-width:36em}
+
+footer{background:var(--ink);color:var(--muted-dark);padding:28px 0;font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+footer a{display:inline-flex;align-items:center;min-height:44px;color:#fff}
+
+/* REVEAL — chỉ ẩn khi JS chạy được và người dùng không tắt chuyển động */
+@media (prefers-reduced-motion:no-preference){
+  .js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  .js .sk.hot.reveal.in{transform:none}
+}
+@media (prefers-reduced-motion:no-preference) and (min-width:900px){
+  .js .sk.hot.reveal.in{transform:translateY(-14px)}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#noi-dung">Bỏ qua tới nội dung</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">[Họ tên]<span>.</span></a>
+    <nav aria-label="Điều hướng chính">
+      <ul>
+        <li><a href="#con-so">Con số</a></li>
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#du-an">Dự án</a></li>
+        <li><a href="#ky-nang">Kỹ năng</a></li>
+        <li><a href="#hop-tac">Hợp tác</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#lien-he">Liên hệ</a>
+  </div>
+</header>
+
+<main id="noi-dung">
+  <!-- 1. HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">Marketing × Sale</span>
+        <h1 id="hero-title"><span class="ph">[Họ tên]</span></h1>
+        <p class="role">Trưởng phòng Marketing &amp; Sale</p>
+        <p class="intro">Hơn <strong>3 năm kinh nghiệm</strong> làm marketing và sale đa ngành, chuyên <strong>xây phòng marketing &amp; sale từ con số 0</strong> cho doanh nghiệp.</p>
+        <div class="btns">
+          <a class="btn btn-main" href="#lien-he">Liên hệ tuyển dụng →</a>
+          <a class="btn btn-ghost" href="#lien-he">Đặt lịch tư vấn</a>
+        </div>
+      </div>
+      <div class="avatar" role="img" aria-label="Chỗ đặt ảnh đại diện">
+        <div>Ảnh đại diện<small>(sẽ cập nhật)</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. CON SỐ -->
+  <section class="stats" id="con-so" aria-labelledby="stats-title">
+    <div class="wrap">
+      <span class="kicker reveal">Con số nổi bật</span>
+      <h2 class="sec-title reveal" id="stats-title">Kết quả nói thay lời giới thiệu.</h2>
+      <div class="stat-grid">
+        <div class="stat big reveal">
+          <span class="tag">Thương hiệu quạt · tháng thứ 3</span>
+          <div class="num">900.000.000<span class="u">đ</span></div>
+          <p><b>Doanh thu tháng thứ 3</b> của thương hiệu quạt cao cấp xây dựng từ con số 0.</p>
+        </div>
+        <div class="stat s2 reveal">
+          <span class="tag">Sau 3 tháng</span>
+          <div class="num">×9</div>
+          <p>Doanh thu tháng tăng <b>gấp 9 lần</b>: từ 100.000.000đ lên 900.000.000đ.</p>
+        </div>
+        <div class="stat s3 reveal">
+          <span class="tag">Nước rửa tay dầu nhớt</span>
+          <div class="num">64<span class="u"> tỉnh</span></div>
+          <p>Hàng lẻ đến tay <b>khách ở cả 64 tỉnh thành</b>.</p>
+        </div>
+        <div class="stat s4 reveal">
+          <span class="tag">Vải may mặc · 1 tháng</span>
+          <div class="num">300.000.000<span class="u">đ</span></div>
+          <p><b>Doanh thu sỉ</b> chốt được trong vòng 1 tháng.</p>
+        </div>
+        <div class="stat s5 reveal">
+          <span class="tag">Kinh nghiệm</span>
+          <div class="num">3+<span class="u"> năm</span></div>
+          <p>Marketing &amp; sale <b>đa ngành</b>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. GIỚI THIỆU -->
+  <section class="about" id="gioi-thieu" aria-labelledby="about-title">
+    <div class="wrap">
+      <span class="kicker reveal">Giới thiệu</span>
+      <h2 class="sec-title reveal" id="about-title">Dựng phòng marketing &amp; sale, rồi để nó tự chạy.</h2>
+      <div class="about-grid">
+        <p class="lead reveal">Mình đang làm tại một công ty cung cấp <em>giải pháp xây dựng phòng marketing nội bộ</em> cho doanh nghiệp. Công việc của mình là vào từng doanh nghiệp, dựng đội, dựng quy trình và đưa doanh thu đi lên từ con số 0.</p>
+        <ul class="facts">
+          <li class="reveal">
+            <h3>Ngành hàng đã triển khai</h3>
+            <div class="chips">
+              <span class="chip">Máy lọc nước</span>
+              <span class="chip">Nước rửa tay dầu nhớt</span>
+              <span class="chip">Quạt</span>
+              <span class="chip">Sản phẩm phong thủy</span>
+              <span class="chip">Vải may mặc</span>
+            </div>
+          </li>
+          <li class="reveal">
+            <h3>Quy mô đội</h3>
+            <p>Thường quản lý một đội khoảng <b>3–4 người</b>.</p>
+          </li>
+          <li class="reveal">
+            <h3>Kinh nghiệm</h3>
+            <p>Hơn <b>3 năm</b> trong marketing và sale.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DỰ ÁN -->
+  <section class="projects" id="du-an" aria-labelledby="proj-title">
+    <div class="wrap">
+      <span class="kicker reveal">Dự án tiêu biểu</span>
+      <h2 class="sec-title reveal" id="proj-title">Ba thương hiệu, ba bài toán khác nhau.</h2>
+      <div class="proj-list">
+        <article class="card c1 reveal">
+          <span class="idx" aria-hidden="true">01</span>
+          <span class="role-tag">Trưởng phòng Marketing kiêm Trưởng phòng Sale</span>
+          <h3>Thương hiệu quạt cao cấp</h3>
+          <ul>
+            <li>Xây dựng thương hiệu riêng cho dòng quạt cao cấp của doanh nghiệp, <b>bắt đầu từ con số 0</b>.</li>
+            <li>Xây dựng <b>hệ thống đại lý từ Bắc đến Trung</b>.</li>
+            <li>Để lại <b>quy trình chốt sale và quy trình marketing</b> để doanh nghiệp tự vận hành.</li>
+          </ul>
+          <div class="ladder" role="list" aria-label="Doanh thu từng tháng">
+            <div role="listitem"><small>Tháng 1</small><strong>100.000.000đ</strong></div>
+            <div role="listitem"><small>Tháng 2</small><strong>200.000.000đ</strong></div>
+            <div role="listitem"><small>Tháng 3</small><strong>900.000.000đ</strong></div>
+          </div>
+          <p class="note">Doanh thu riêng của từng tháng, không cộng dồn.</p>
+        </article>
+
+        <article class="card c2 reveal">
+          <span class="idx" aria-hidden="true">02</span>
+          <span class="role-tag">Phó phòng Marketing kiêm Lead Sale</span>
+          <h3>Nước rửa tay dầu nhớt</h3>
+          <ul>
+            <li>Từ con số 0 đến <b>hệ thống đại lý từ Bắc vào Nam</b> trong khoảng 1 năm.</li>
+            <li>Hàng lẻ bán đến khách ở <b>cả 64 tỉnh thành</b>.</li>
+            <li>Thương hiệu nổi bật trên <b>Facebook, TikTok và Shopee</b>.</li>
+            <li>Tháng thứ 2 đạt <b>90.000.000đ</b>; tổng 3 tháng đầu đạt <b>200.000.000đ</b>.</li>
+          </ul>
+        </article>
+
+        <article class="card c3 reveal">
+          <span class="idx" aria-hidden="true">03</span>
+          <span class="role-tag">Quản lý sale</span>
+          <h3>Vải may mặc</h3>
+          <ul>
+            <li>Khách hàng: <b>khách bán sỉ</b>.</li>
+          </ul>
+          <div class="highlight">
+            <span class="hnum">300.000.000đ</span>
+            <span>doanh thu chốt được trong 1 tháng</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. KỸ NĂNG -->
+  <section class="skills" id="ky-nang" aria-labelledby="skill-title">
+    <div class="wrap">
+      <span class="kicker reveal">Kỹ năng</span>
+      <h2 class="sec-title reveal" id="skill-title">Mạnh nhất ở khâu chốt và khâu dựng.</h2>
+      <div class="skill-grid">
+        <div class="sk hot reveal">
+          <h3>Thế mạnh <span>01</span></h3>
+          <ul>
+            <li>Chốt sale</li>
+            <li>Xây dựng quy trình chốt sale &amp; marketing</li>
+            <li>Đào tạo đội sale</li>
+            <li>Xây phòng marketing từ đầu</li>
+          </ul>
+        </div>
+        <div class="sk reveal">
+          <h3>Marketing <span>02</span></h3>
+          <ul>
+            <li>Lập kế hoạch marketing</li>
+            <li>Content</li>
+            <li>Facebook Ads</li>
+          </ul>
+        </div>
+        <div class="sk reveal">
+          <h3>Kênh &amp; công cụ <span>03</span></h3>
+          <ul>
+            <li>Quản lý đội làm TikTok, Shopee</li>
+            <li>Theo dõi chỉ số Facebook Ads trên Google Sheets</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. HỢP TÁC -->
+  <section class="collab" id="hop-tac" aria-labelledby="collab-title">
+    <div class="wrap">
+      <span class="kicker reveal">Hợp tác cùng mình</span>
+      <h2 class="sec-title reveal" id="collab-title">Hai cách để làm việc cùng nhau.</h2>
+      <div class="collab-grid">
+        <article class="offer dark reveal">
+          <span class="for">Dành cho nhà tuyển dụng / HR</span>
+          <h3>Tuyển toàn thời gian vị trí Trưởng phòng Marketing &amp; Sale</h3>
+          <p>Một người vừa làm marketing vừa trực tiếp chốt sale, đã quen dựng đội và quy trình từ con số 0.</p>
+          <a class="btn btn-main" href="#lien-he">Liên hệ tuyển dụng →</a>
+        </article>
+        <article class="offer reveal">
+          <span class="for">Dành cho chủ doanh nghiệp</span>
+          <h3>Thuê theo dự án hoặc tư vấn dựng phòng marketing &amp; sale</h3>
+          <p>Cùng bạn xây phòng marketing &amp; sale, quy trình chốt sale và quy trình marketing để doanh nghiệp tự vận hành.</p>
+          <a class="btn btn-dark" href="#lien-he">Đặt lịch tư vấn →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. LIÊN HỆ -->
+  <section class="contact" id="lien-he" aria-labelledby="contact-title">
+    <div class="wrap">
+      <span class="kicker reveal">Liên hệ</span>
+      <h2 class="sec-title reveal" id="contact-title">Nói chuyện nhé.</h2>
+      <ul class="c-list">
+        <li class="reveal"><small>Điện thoại</small><span class="ph">[Số điện thoại]</span></li>
+        <li class="reveal"><small>Email</small><span class="ph">[Email]</span></li>
+        <li class="reveal"><small>Zalo</small><span class="ph">[Zalo]</span></li>
+      </ul>
+      <p class="small reveal">Dù bạn đang tuyển người hay cần dựng phòng marketing &amp; sale, cứ nhắn cho mình.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>[Họ tên] © 2026</span>
+    <a href="#top">Lên đầu trang ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
